@@ -11,6 +11,11 @@ describe("addMonths", () => {
     assert.deepStrictEqual(result, new Date(2015, 1 /* Feb */, 1));
   });
 
+  it("can add months to march", () => {
+    const result = addMonths(new Date('2023-03-01T00:00:00.000Z'), 1);
+    assert.deepStrictEqual(result, new Date('2023-04-01T00:00:00.000Z'));
+  });
+
   it("accepts a timestamp", () => {
     const result = addMonths(new Date(2014, 8 /* Sep */, 1).getTime(), 12);
     assert.deepStrictEqual(result, new Date(2015, 8 /* Sep */, 1));
